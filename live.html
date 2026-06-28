@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradingFilter — Live Validation</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --border: #1a1a1a;
+    --text: #e0e0e0;
+    --dim: #666666;
+    --accent: #00ff88;
+    --warn: #ffaa00;
+    --fail: #ff4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .header h1 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .header .subtitle {
+    font-size: 0.75rem;
+    color: var(--dim);
+    margin-top: 0.25rem;
+  }
+  .terminal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    white-space: pre;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .badge-live {
+    background: rgba(0,255,136,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(0,255,136,0.3);
+  }
+  .footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.7rem;
+    color: var(--dim);
+  }
+  .footer a {
+    color: var(--dim);
+    text-decoration: none;
+  }
+  .footer a:hover {
+    color: var(--text);
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>TradingFilter<span class="badge badge-live">LIVE VALIDATION</span></h1>
+  <div class="subtitle">PT-01 Forward Test &mdash; Day 2 / 92 &mdash; Updated 2026-06-27</div>
+</div>
+
+<div class="terminal">TradingFilter v5 — Live Validation
+========================================================
+Generated: 2026-06-27T16:24:42Z
+
+PT-01 FORWARD VALIDATION
+--------------------------------------------------------
+  Period:              2026-06-25 → 2026-09-25
+  Progress:            Day 2 / 92 (2%)
+  [........................................]
+
+AUTOMATION
+--------------------------------------------------------
+  Trading days:        2
+  Days with runs:      2
+  Uptime:              100.0%  PASS (target ≥90%)
+  Scheduled runs:      1
+  Data errors:         0
+
+FORWARD PERFORMANCE
+--------------------------------------------------------
+  No closed trades yet — accumulating data.
+
+OPEN POSITIONS
+--------------------------------------------------------
+    INTC    MANUAL                  ?  (?d)  stop $0.00  tgt $0.00
+
+CLOSED TRADES
+--------------------------------------------------------
+    No closed trades yet.
+
+MARKET CONTEXT
+--------------------------------------------------------
+    Metadata collection started — data accumulating.
+
+REGIME DISTRIBUTION
+--------------------------------------------------------
+    UNKNOWN           6 runs
+
+PROMOTION PIPELINE
+--------------------------------------------------------
+  Phase A — Backtesting
+    v1  0.006R  ─────────  → v5  0.232R  ████████──  COMPLETE
+
+  §18 Amendment v1.2                        ██████████  APPROVED
+
+  §15 Authorization                         ████████──  CONDITIONAL
+    RM-01 ≥ 0.20R:   0.232R  PASS
+    RK-03 ≤ 20%:     11.1%   PASS
+    Failures ≤ 3:     3       PASS
+
+  PT-01 Paper Trading                       [........................................]  2%
+    Day 2 of 92
+
+  AUTHORIZED                                ──────────  PENDING
+
+GOVERNANCE
+--------------------------------------------------------
+  Change policy:     research-branch-b isolated from production
+  Bug fix policy:    operational fixes only; logic changes restart PT-01
+  Review schedule:   M1 (Jul 25) / M2 (Aug 25) / M3 (Sep 25)
+  Parameters frozen: since 2026-06-25 (commit ee4acda)
+  Research deployed: 0 changes to production
+</div>
+
+<div class="footer">
+  <p>This page is auto-generated from the production database after each daily run.</p>
+  <p>No data on this page is simulated. All values reflect real system operation.</p>
+  <p>&copy; 2026 Douglas Owiye &mdash; TradingFilter Research Operating System</p>
+</div>
+
+</body>
+</html>
