@@ -181,53 +181,71 @@ document.addEventListener('DOMContentLoaded', async function() {
   </script>
 <script>
 (function(){
+  function applyLV(data) {
+    var d    = data.days_elapsed  || 0;
+    var t    = data.total_days    || 92;
+    var pct  = data.pct_complete  || 0;
+    var runs = data.days_with_runs        || 0;
+    var exp  = data.expected_trading_days || 0;
+    var errs = data.data_errors   || 0;
+    var filled = data.orders_filled   || 0;
+    var rej    = data.orders_rejected || 0;
+    var pend   = data.orders_pending  || 0;
+    var total  = filled + rej + pend;
+    var gen    = data.generated_at ? data.generated_at.slice(0,10) : '';
+
+    var reps = [
+      ['day 2/92',            'day ' + d + '/' + t],
+      ['day 2 / 92',          'day ' + d + ' / ' + t],
+      ['day 2 of 92',         'day ' + d + ' of ' + t],
+      ['Day 2 / 92',          'Day ' + d + ' / ' + t],
+      ['Day 2',               'Day ' + d],
+      ['day 2 cumulative',    'day ' + d + ' cumulative'],
+      ['2.2%',                pct + '%'],
+      ['1/1 runs · 0 errors', runs + '/' + exp + ' runs · ' + errs + ' errors'],
+      ['0 filled',            filled + ' filled'],
+      ['6 rejected',          rej + ' rejected'],
+      ['8 sent',              total + ' sent'],
+      ['generated 2026-06-27','generated ' + gen],
+    ];
+
+    var replaced = 0;
+    function walk(node) {
+      if (node.nodeType === 3) {
+        var text = node.textContent, changed = false;
+        for (var i = 0; i < reps.length; i++) {
+          if (text.indexOf(reps[i][0]) !== -1) {
+            text = text.split(reps[i][0]).join(reps[i][1]);
+            changed = true; replaced++;
+          }
+        }
+        if (changed) node.textContent = text;
+      } else {
+        for (var j = 0; j < node.childNodes.length; j++) walk(node.childNodes[j]);
+      }
+    }
+
+    walk(document.body);
+    return replaced;
+  }
+
+  var lvData = null;
   fetch('/live_validation.json?v=' + Date.now())
     .then(function(r){ return r.json(); })
-    .then(function(data){
-      var d    = data.days_elapsed  || 0;
-      var t    = data.total_days    || 92;
-      var pct  = data.pct_complete  || 0;
-      var runs = data.days_with_runs        || 0;
-      var exp  = data.expected_trading_days || 0;
-      var errs = data.data_errors   || 0;
-      var filled = data.orders_filled   || 0;
-      var rej    = data.orders_rejected || 0;
-      var pend   = data.orders_pending  || 0;
-      var total  = filled + rej + pend;
-      var gen    = data.generated_at ? data.generated_at.slice(0,10) : '';
-
-      var reps = [
-        ['day 2/92',            'day ' + d + '/' + t],
-        ['day 2 / 92',          'day ' + d + ' / ' + t],
-        ['day 2 of 92',         'day ' + d + ' of ' + t],
-        ['Day 2 / 92',          'Day ' + d + ' / ' + t],
-        ['Day 2',               'Day ' + d],
-        ['day 2 cumulative',    'day ' + d + ' cumulative'],
-        ['2.2%',                pct + '%'],
-        ['1/1 runs · 0 errors', runs + '/' + exp + ' runs · ' + errs + ' errors'],
-        ['0 filled',            filled + ' filled'],
-        ['6 rejected',          rej + ' rejected'],
-        ['8 sent',              total + ' sent'],
-        ['generated 2026-06-27','generated ' + gen],
-      ];
-
-      function walk(node) {
-        if (node.nodeType === 3) {
-          var text = node.textContent, changed = false;
-          for (var i = 0; i < reps.length; i++) {
-            if (text.indexOf(reps[i][0]) !== -1) {
-              text = text.split(reps[i][0]).join(reps[i][1]);
-              changed = true;
-            }
-          }
-          if (changed) node.textContent = text;
-        } else {
-          for (var j = 0; j < node.childNodes.length; j++) walk(node.childNodes[j]);
-        }
-      }
-      walk(document.body);
-    })
+    .then(function(data){ lvData = data; })
     .catch(function(){});
+
+  // Retry loop: Claude Design unpacks asynchronously, so we keep trying
+  // until we see at least one replacement land, up to ~10 seconds.
+  var attempts = 0;
+  var delays = [500, 1000, 2000, 3000, 4000];
+  function tryApply() {
+    if (!lvData) { attempts++; if (attempts < delays.length) setTimeout(tryApply, delays[attempts]); return; }
+    var n = applyLV(lvData);
+    attempts++;
+    if (n === 0 && attempts < delays.length) setTimeout(tryApply, delays[attempts]);
+  }
+  setTimeout(tryApply, delays[0]);
 })();
 </script>
 </body>
