@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-07-01T06:19:40Z",
+  "pt01_start": "2026-06-25",
+  "pt01_end": "2026-09-25",
+  "today": "2026-07-01",
+  "days_elapsed": 6,
+  "total_days": 92,
+  "pct_complete": 6.5,
+  "expected_trading_days": 5,
+  "days_with_runs": 5,
+  "scheduled_runs": 4,
+  "data_errors": 0,
+  "uptime_pct": 100.0,
+  "regime_counts": {
+    "UNKNOWN": 6,
+    "BULL_VOLATILE": 3,
+    "BULL_TRENDING": 1
+  },
+  "orders_filled": 0,
+  "orders_rejected": 6,
+  "orders_pending": 2,
+  "open_trades": [
+    {
+      "ticker": "INTC",
+      "signal_type": "MANUAL",
+      "entry_date": null,
+      "entry_price": 130.3625,
+      "exit_date": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "r_multiple": null,
+      "stop_price": null,
+      "target_1": null
+    }
+  ],
+  "closed_trades": [],
+  "forward_expectancy": null,
+  "forward_winrate": null,
+  "forward_n": 0,
+  "backtest_exp": 0.232,
+  "backtest_sharpe": 3.05,
+  "backtest_winrate": 0.5,
+  "backtest_trades": 190,
+  "metadata": [
+    {
+      "run_date": "2026-06-29",
+      "vix_close": 18.40999984741211,
+      "spy_rsi": 44.182363823309764,
+      "spy_realised_vol_20d": 0.1687387612373092,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-06-29",
+      "vix_close": 17.649999618530273,
+      "spy_rsi": 52.25622161068425,
+      "spy_realised_vol_20d": 0.18022952509205967,
+      "market_regime": "BULL_TRENDING"
+    },
+    {
+      "run_date": "2026-06-30",
+      "vix_close": 16.450000762939453,
+      "spy_rsi": 55.58047432224579,
+      "spy_realised_vol_20d": 0.18278223718035752,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.450000762939453,
+      "spy_rsi": 55.580341110091396,
+      "spy_realised_vol_20d": 0.1827812472196411,
+      "market_regime": "BULL_VOLATILE"
+    }
+  ]
+}
