@@ -184,12 +184,12 @@ document.addEventListener('DOMContentLoaded', async function() {
   fetch('/live_validation.json?v=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(data){
-      var d   = data.days_elapsed  || 0;
-      var t   = data.total_days    || 92;
-      var pct = data.pct_complete  || 0;
+      var d    = data.days_elapsed  || 0;
+      var t    = data.total_days    || 92;
+      var pct  = data.pct_complete  || 0;
       var runs = data.days_with_runs        || 0;
       var exp  = data.expected_trading_days || 0;
-      var errs = data.data_errors  || 0;
+      var errs = data.data_errors   || 0;
       var filled = data.orders_filled   || 0;
       var rej    = data.orders_rejected || 0;
       var pend   = data.orders_pending  || 0;
@@ -197,15 +197,18 @@ document.addEventListener('DOMContentLoaded', async function() {
       var gen    = data.generated_at ? data.generated_at.slice(0,10) : '';
 
       var reps = [
-        ['day 2/92',           'day ' + d + '/' + t],
-        ['day 2 / 92',         'day ' + d + ' / ' + t],
-        ['day 2 / 92','day ' + d + ' / ' + t],
-        ['2.2%',               pct + '%'],
+        ['day 2/92',            'day ' + d + '/' + t],
+        ['day 2 / 92',          'day ' + d + ' / ' + t],
+        ['day 2 of 92',         'day ' + d + ' of ' + t],
+        ['Day 2 / 92',          'Day ' + d + ' / ' + t],
+        ['Day 2',               'Day ' + d],
+        ['day 2 cumulative',    'day ' + d + ' cumulative'],
+        ['2.2%',                pct + '%'],
         ['1/1 runs · 0 errors', runs + '/' + exp + ' runs · ' + errs + ' errors'],
-        ['0 filled',           filled + ' filled'],
-        ['6 rejected',         rej + ' rejected'],
-        ['8 sent',             total + ' sent'],
-        ['generated 2026-06-27', 'generated ' + gen],
+        ['0 filled',            filled + ' filled'],
+        ['6 rejected',          rej + ' rejected'],
+        ['8 sent',              total + ' sent'],
+        ['generated 2026-06-27','generated ' + gen],
       ];
 
       function walk(node) {
