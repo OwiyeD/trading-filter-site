@@ -78,6 +78,73 @@
   .footer a:hover {
     color: var(--text);
   }
+  .cta {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    border: 1px solid #1a2a1a;
+    border-radius: 6px;
+    background: #0a120a;
+  }
+  .cta p {
+    font-size: 0.8rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+  .cta .cta-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .cta a.btn {
+    display: inline-block;
+    padding: 0.45rem 1rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-family: inherit;
+  }
+  .cta a.btn-primary {
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+  }
+  .cta a.btn-secondary {
+    border: 1px solid #2a3a2a;
+    color: var(--dim);
+  }
+  .cta a.btn-secondary:hover { color: var(--text); }
+  .cta form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .cta input[type=email] {
+    flex: 1;
+    min-width: 200px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 4px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    outline: none;
+  }
+  .cta input[type=email]:focus { border-color: #2a4a2a; }
+  .cta button[type=submit] {
+    background: transparent;
+    border: 1px solid #2a3a2a;
+    border-radius: 4px;
+    color: var(--dim);
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+  }
+  .cta button[type=submit]:hover { color: var(--text); border-color: #3a4a3a; }
 </style>
 </head>
 <body>
@@ -89,7 +156,7 @@
 
 <div class="terminal">TradingFilter v5 — Live Validation
 ========================================================
-Generated: 2026-07-01T08:55:02Z
+Generated: 2026-07-01T09:55:27Z
 
 PT-01 FORWARD VALIDATION
 --------------------------------------------------------
@@ -119,14 +186,14 @@ CLOSED TRADES
 
 MARKET CONTEXT
 --------------------------------------------------------
-    VIX:                $16.959999084472656
+    VIX:                $16.90999984741211
     SPY RSI:             55.6
     SPY 20d vol (ann):   18.3%
 
 REGIME DISTRIBUTION
 --------------------------------------------------------
     BULL_TRENDING     1 runs
-    BULL_VOLATILE     7 runs
+    BULL_VOLATILE     8 runs
     UNKNOWN           6 runs
 
 PROMOTION PIPELINE
@@ -155,10 +222,22 @@ GOVERNANCE
   Research deployed: 0 changes to production
 </div>
 
+<div class="cta">
+  <p>TradingFilter is a research operating system for systematic trading &mdash; every strategy earns promotion through documented evidence before it manages capital. This board updates automatically after each daily run.</p>
+  <div class="cta-links">
+    <a href="https://owiyed.github.io/trading-filter-site/" class="btn btn-primary">book a governance walkthrough &rarr;</a>
+    <a href="https://owiyed.github.io/trading-filter-site/" class="btn btn-secondary">back to landing page</a>
+  </div>
+  <p style="font-size:0.72rem; color:var(--dim); margin-bottom:0.5rem;">Get monthly evidence reports &mdash; PT-01 progress, governance findings, what changed (or didn&rsquo;t). No sales emails.</p>
+  <form action="https://formspree.io/f/xjgqrakr" method="POST">
+    <input type="email" name="email" placeholder="your@email.com" required>
+    <button type="submit">join validation program &rarr;</button>
+  </form>
+</div>
+
 <div class="footer">
-  <p>This page is auto-generated from the production database after each daily run.</p>
-  <p>No data on this page is simulated. All values reflect real system operation.</p>
-  <p>&copy; 2026 Douglas Owiye &mdash; TradingFilter Research Operating System</p>
+  <p>Auto-generated from the production database after each daily run. No value on this page is simulated.</p>
+  <p>&copy; 2026 Douglas Owiye &mdash; <a href="https://owiyed.github.io/trading-filter-site/">TradingFilter</a></p>
 </div>
 
 </body>
