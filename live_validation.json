@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T21:08:58Z",
+  "generated_at": "2026-07-08T13:38:06Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
   "today": "2026-07-08",
@@ -7,15 +7,56 @@
   "total_days": 92,
   "pct_complete": 14.1,
   "expected_trading_days": 10,
-  "days_with_runs": 0,
-  "scheduled_runs": 0,
+  "days_with_runs": 8,
+  "scheduled_runs": 8,
   "data_errors": 0,
-  "uptime_pct": 0.0,
-  "regime_counts": {},
-  "orders_filled": 0,
-  "orders_rejected": 0,
+  "uptime_pct": 80.0,
+  "regime_counts": {
+    "UNKNOWN": 6,
+    "BULL_VOLATILE": 9,
+    "BULL_TRENDING": 5
+  },
+  "orders_filled": 3,
+  "orders_rejected": 6,
   "orders_pending": 0,
-  "open_trades": [],
+  "open_trades": [
+    {
+      "ticker": "INTC",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-06-25",
+      "entry_price": 130.3625,
+      "exit_date": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "r_multiple": null,
+      "stop_price": 88.95,
+      "target_1": 170.75
+    },
+    {
+      "ticker": "AAPL",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-07-07",
+      "entry_price": 313.7,
+      "exit_date": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "r_multiple": null,
+      "stop_price": 295.40418241103237,
+      "target_1": 347.17163517793534
+    },
+    {
+      "ticker": "AAPL",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-07-08",
+      "entry_price": 309.425932,
+      "exit_date": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "r_multiple": null,
+      "stop_price": 293.8739857071844,
+      "target_1": 344.2320285856313
+    }
+  ],
   "closed_trades": [],
   "forward_expectancy": null,
   "forward_winrate": null,
@@ -24,5 +65,104 @@
   "backtest_sharpe": 3.05,
   "backtest_winrate": 0.5,
   "backtest_trades": 190,
-  "metadata": []
+  "metadata": [
+    {
+      "run_date": "2026-06-29",
+      "vix_close": 18.40999984741211,
+      "spy_rsi": 44.182363823309764,
+      "spy_realised_vol_20d": 0.1687387612373092,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-06-29",
+      "vix_close": 17.649999618530273,
+      "spy_rsi": 52.25622161068425,
+      "spy_realised_vol_20d": 0.18022952509205967,
+      "market_regime": "BULL_TRENDING"
+    },
+    {
+      "run_date": "2026-06-30",
+      "vix_close": 16.450000762939453,
+      "spy_rsi": 55.58047432224579,
+      "spy_realised_vol_20d": 0.18278223718035752,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.450000762939453,
+      "spy_rsi": 55.580341110091396,
+      "spy_realised_vol_20d": 0.1827812472196411,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.959999084472656,
+      "spy_rsi": 55.58047432224718,
+      "spy_realised_vol_20d": 0.18278223718035752,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.959999084472656,
+      "spy_rsi": 55.580474386109124,
+      "spy_realised_vol_20d": 0.18278223718035752,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.989999771118164,
+      "spy_rsi": 55.580474322434306,
+      "spy_realised_vol_20d": 0.18278223718035752,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.959999084472656,
+      "spy_rsi": 55.58047432224718,
+      "spy_realised_vol_20d": 0.18278223718035752,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.90999984741211,
+      "spy_rsi": 55.58047432224579,
+      "spy_realised_vol_20d": 0.18278223718035752,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-01",
+      "vix_close": 16.59000015258789,
+      "spy_rsi": 54.860413311307454,
+      "spy_realised_vol_20d": 0.1812792141303191,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-02",
+      "vix_close": 16.149999618530273,
+      "spy_rsi": 54.1423023118905,
+      "spy_realised_vol_20d": 0.18061985530872113,
+      "market_regime": "BULL_TRENDING"
+    },
+    {
+      "run_date": "2026-07-02",
+      "vix_close": 15.930000305175781,
+      "spy_rsi": 54.12754402151413,
+      "spy_realised_vol_20d": 0.18062111391389232,
+      "market_regime": "BULL_TRENDING"
+    },
+    {
+      "run_date": "2026-07-06",
+      "vix_close": 15.800000190734863,
+      "spy_rsi": 58.12278780912032,
+      "spy_realised_vol_20d": 0.15675911358810388,
+      "market_regime": "BULL_TRENDING"
+    },
+    {
+      "run_date": "2026-07-07",
+      "vix_close": 17.43000030517578,
+      "spy_rsi": 55.27529964910721,
+      "spy_realised_vol_20d": 0.1580682920053172,
+      "market_regime": "BULL_TRENDING"
+    }
+  ]
 }
