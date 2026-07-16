@@ -151,51 +151,54 @@
 
 <div class="header">
   <h1>TradingFilter<span class="badge badge-live">LIVE VALIDATION</span></h1>
-  <div class="subtitle">PT-01 Forward Test &mdash; Day 20 / 92 &mdash; Updated 2026-07-15</div>
+  <div class="subtitle">PT-01 Forward Test &mdash; Day 21 / 92 &mdash; Updated 2026-07-16</div>
 </div>
 
 <div class="terminal">TradingFilter v5 — Live Validation
 ========================================================
-Generated: 2026-07-15T13:36:19Z
+Generated: 2026-07-16T13:37:06Z
 
 PT-01 FORWARD VALIDATION
 --------------------------------------------------------
   Period:              2026-06-25 → 2026-09-25
-  Progress:            Day 20 / 92 (22%)
-  [########................................]
+  Progress:            Day 21 / 92 (23%)
+  [#########...............................]
 
 AUTOMATION
 --------------------------------------------------------
-  Trading days:        13
-  Days with runs:      13
+  Trading days:        14
+  Days with runs:      14
   Uptime:              100.0%  PASS (target ≥90%)
-  Scheduled runs:      15
+  Scheduled runs:      16
   Data errors:         0
 
 FORWARD PERFORMANCE
 --------------------------------------------------------
-  No closed trades yet — accumulating data.
+  Forward expectancy:   -0.7380R  (n=1)
+  Backtest reference:   +0.2320R  (n=190)
+  Divergence:           -0.9700R
+  PT-05 convergence:    FAIL (tolerance: +/-0.30R)
+  NOTE: n=1 — insufficient for confidence (need 30+)
 
 OPEN POSITIONS
 --------------------------------------------------------
-    INTC    MOMENTUM_ENTRY_IN       2026-06-25  (20d)  stop $88.95  tgt $170.75
-    AAPL    MOMENTUM_ENTRY_IN       2026-07-07  (8d)  stop $295.40  tgt $347.17
-    AAPL    MOMENTUM_ENTRY_IN       2026-07-08  (7d)  stop $293.87  tgt $344.23
+    AAPL    MOMENTUM_ENTRY_IN       2026-07-07  (9d)  stop $295.40  tgt $347.17
+    AAPL    MOMENTUM_ENTRY_IN       2026-07-08  (8d)  stop $293.87  tgt $344.23
 
 CLOSED TRADES
 --------------------------------------------------------
-    No closed trades yet.
+    2026-06-25  INTC     -0.74R  MAX_HOLD
 
 MARKET CONTEXT
 --------------------------------------------------------
-    VIX:                $16.15999984741211
-    SPY RSI:             56.4
-    SPY 20d vol (ann):   12.5%
+    VIX:                $16.170000076293945
+    SPY RSI:             58.4
+    SPY 20d vol (ann):   12.4%
 
 REGIME DISTRIBUTION
 --------------------------------------------------------
     BULL_TRENDING     11 runs
-    BULL_VOLATILE     10 runs
+    BULL_VOLATILE     11 runs
     UNKNOWN           6 runs
 
 PROMOTION PIPELINE
@@ -210,8 +213,8 @@ PROMOTION PIPELINE
     RK-03 ≤ 20%:     11.1%   PASS
     Failures ≤ 3:     3       PASS
 
-  PT-01 Paper Trading                       [########................................]  22%
-    Day 20 of 92
+  PT-01 Paper Trading                       [#########...............................]  23%
+    Day 21 of 92
 
   AUTHORIZED                                ──────────  PENDING
 
