@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T13:52:10Z",
+  "generated_at": "2026-07-17T14:38:14Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
   "today": "2026-07-17",
@@ -16,22 +16,10 @@
     "BULL_VOLATILE": 12,
     "BULL_TRENDING": 11
   },
-  "orders_filled": 3,
+  "orders_filled": 4,
   "orders_rejected": 8,
   "orders_pending": 0,
   "open_trades": [
-    {
-      "ticker": "INTC",
-      "signal_type": "MOMENTUM_ENTRY_IN",
-      "entry_date": "2026-06-25",
-      "entry_price": 130.3625,
-      "exit_date": null,
-      "exit_price": null,
-      "exit_reason": null,
-      "r_multiple": null,
-      "stop_price": 88.95,
-      "target_1": 170.75
-    },
     {
       "ticker": "AAPL",
       "signal_type": "MOMENTUM_ENTRY_IN",
@@ -57,10 +45,23 @@
       "target_1": 344.2320285856313
     }
   ],
-  "closed_trades": [],
-  "forward_expectancy": null,
-  "forward_winrate": null,
-  "forward_n": 0,
+  "closed_trades": [
+    {
+      "ticker": "INTC",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-06-25",
+      "entry_price": 130.3625,
+      "exit_date": "2026-07-17",
+      "exit_price": 93.76,
+      "exit_reason": "MAX_HOLD",
+      "r_multiple": -0.8838514941140959,
+      "stop_price": 88.95,
+      "target_1": 170.75
+    }
+  ],
+  "forward_expectancy": -0.8839,
+  "forward_winrate": 0.0,
+  "forward_n": 1,
   "backtest_exp": 0.232,
   "backtest_sharpe": 3.05,
   "backtest_winrate": 0.5,
