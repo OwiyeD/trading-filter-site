@@ -284,6 +284,35 @@ document.addEventListener('DOMContentLoaded', async function() {
     return true;
   }
 
+  function renderForwardPerformance(data) {
+    // Static "0 closed trades" was written when PT-01 had none — never
+    // wired to any patch since nothing had closed yet. Deliberately does
+    // NOT surface forward_expectancy/forward_winrate prominently even now
+    // that n>0: this page's own governance banner says no statistical
+    // inference should be drawn below 90 trading days, and displaying a
+    // single trade's R-multiple as if meaningful would violate that same
+    // principle. Only the honest count updates. See INCIDENT_LOG.md,
+    // 2026-07-17.
+    var n = data.forward_n || 0;
+    var divs = document.querySelectorAll('div');
+    var heading = null;
+    for (var i = 0; i < divs.length; i++) {
+      if (divs[i].children.length === 0 && divs[i].textContent === 'FORWARD PERFORMANCE') {
+        heading = divs[i];
+        break;
+      }
+    }
+    if (!heading || !heading.nextElementSibling) return false;
+    var row = heading.nextElementSibling;
+    var numEl = row.querySelector('span');
+    var capEl = numEl ? numEl.nextElementSibling : null;
+    if (!numEl || !capEl) return false;
+    numEl.textContent = String(n);
+    capEl.innerHTML = n + (n === 1 ? ' closed trade' : ' closed trades')
+      + '<br>accumulating data — too early to score';
+    return true;
+  }
+
   var lvData = null;
   fetch('live_validation.json?v=' + Date.now())
     .then(function(r){ return r.json(); })
@@ -298,8 +327,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (!lvData) { attempts++; if (attempts < delays.length) setTimeout(tryApply, delays[attempts]); return; }
     var n = applyLV(lvData);
     var posOk = renderOpenPositions(lvData);
+    var fpOk  = renderForwardPerformance(lvData);
     attempts++;
-    if ((n === 0 || !posOk) && attempts < delays.length) setTimeout(tryApply, delays[attempts]);
+    if ((n === 0 || !posOk || !fpOk) && attempts < delays.length) setTimeout(tryApply, delays[attempts]);
   }
   setTimeout(tryApply, delays[0]);
 })();
