@@ -229,6 +229,61 @@ document.addEventListener('DOMContentLoaded', async function() {
     return replaced;
   }
 
+  function renderOpenPositions(data) {
+    // The static card this replaces was hand-written for a single ticker
+    // (INTC) and can't represent more than one open position, or update
+    // once that position closes. Rebuilds it as one card per real open
+    // trade from live_validation.json instead. See INCIDENT_LOG.md,
+    // 2026-07-14 (PENDING) and 2026-07-17 (fixed).
+    var trades = data.open_trades || [];
+    var heading = null;
+    var divs = document.querySelectorAll('div');
+    for (var i = 0; i < divs.length; i++) {
+      if (divs[i].children.length === 0 && divs[i].textContent === 'OPEN POSITIONS') {
+        heading = divs[i];
+        break;
+      }
+    }
+    if (!heading || !heading.nextElementSibling) return false;
+    var container = heading.nextElementSibling;
+
+    var html = '';
+    if (trades.length === 0) {
+      html = '<div style="padding:16px; font-family:\'JetBrains Mono\',monospace; font-size:11.5px; color:#6E7785;">no open positions right now</div>';
+    } else {
+      for (var j = 0; j < trades.length; j++) {
+        var t = trades[j];
+        var entry = t.entry_price != null ? '$' + Number(t.entry_price).toFixed(2) : '—';
+        var stop  = t.stop_price  != null ? '$' + Number(t.stop_price).toFixed(2)  : '—';
+        var tgt   = t.target_1    != null ? '$' + Number(t.target_1).toFixed(2)    : '—';
+        var sig   = t.signal_type || '—';
+        var rowBorder = (j < trades.length - 1) ? ' border-bottom:1px solid #1E2630;' : '';
+        html += '<div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #161C25;">'
+          + '<div style="display:flex; align-items:center; gap:12px;">'
+          + '<span style="font-family:\'JetBrains Mono\',monospace; font-size:14px; font-weight:600; color:#E8EBF0;">' + t.ticker + '</span>'
+          + '<span style="font-family:\'JetBrains Mono\',monospace; font-size:10px; color:#57D9A3; background:#0D1A15; border:1px solid #1E3A30; padding:2px 8px;">' + sig + '</span>'
+          + '</div>'
+          + '<span style="font-family:\'JetBrains Mono\',monospace; font-size:13px; color:#C3CAD4;">' + entry + '</span>'
+          + '</div>'
+          + '<div style="display:grid; grid-template-columns:1fr 1fr 1fr; font-family:\'JetBrains Mono\',monospace; font-size:11px;' + rowBorder + '">'
+          + '<div style="padding:11px 16px; border-right:1px solid #161C25;"><div style="color:#5E6672; margin-bottom:3px;">stop</div><div style="color:#C3CAD4;">' + stop + '</div></div>'
+          + '<div style="padding:11px 16px; border-right:1px solid #161C25;"><div style="color:#5E6672; margin-bottom:3px;">target</div><div style="color:#C3CAD4;">' + tgt + '</div></div>'
+          + '<div style="padding:11px 16px;"><div style="color:#5E6672; margin-bottom:3px;">R</div><div style="color:#6E7785;">open</div></div>'
+          + '</div>';
+      }
+    }
+    container.innerHTML = html;
+
+    // The static caption below the card was written specifically about
+    // INTC's one reconciliation-created row and doesn't generalize.
+    var caption = container.nextElementSibling;
+    if (caption && caption.textContent.indexOf('reconciliation-created') !== -1) {
+      caption.textContent = trades.length + (trades.length === 1 ? ' position' : ' positions')
+        + ' currently open — live from the platform database.';
+    }
+    return true;
+  }
+
   var lvData = null;
   fetch('live_validation.json?v=' + Date.now())
     .then(function(r){ return r.json(); })
@@ -242,8 +297,9 @@ document.addEventListener('DOMContentLoaded', async function() {
   function tryApply() {
     if (!lvData) { attempts++; if (attempts < delays.length) setTimeout(tryApply, delays[attempts]); return; }
     var n = applyLV(lvData);
+    var posOk = renderOpenPositions(lvData);
     attempts++;
-    if (n === 0 && attempts < delays.length) setTimeout(tryApply, delays[attempts]);
+    if ((n === 0 || !posOk) && attempts < delays.length) setTimeout(tryApply, delays[attempts]);
   }
   setTimeout(tryApply, delays[0]);
 })();
