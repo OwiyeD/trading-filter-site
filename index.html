@@ -199,7 +199,6 @@ document.addEventListener('DOMContentLoaded', async function() {
       ['day 22 / 92',          'day ' + d + ' / ' + t],
       ['day 22 of 92',         'day ' + d + ' of ' + t],
       ['Day 22 / 92',          'Day ' + d + ' / ' + t],
-      ['Day 2',               'Day ' + d],
       ['day 22 cumulative',    'day ' + d + ' cumulative'],
       ['13.0%',                pct + '%'],
       ['15/15 runs · 0 errors', runs + '/' + exp + ' runs · ' + errs + ' errors'],
@@ -210,6 +209,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     ];
 
     var replaced = 0;
+    // Regex, not the reps array's naive split/join: the day counter's "Day
+    // N" label sits in its own isolated text node (split from the "/ 92"
+    // suffix by a <span> boundary), so it never matches the full 'Day 22 /
+    // 92' pattern above — only a standalone 'Day N' pattern ever fires on
+    // it. A literal-substring version of that ('Day 2') is a text-prefix
+    // of any two-digit day starting with 2 (20-29) and corrupted "Day 22"
+    // into "Day 222" once PT-01 reached day 20. \d+ matches the whole
+    // number instead of just a leading digit, so it can't happen again at
+    // any day count. See INCIDENT_LOG.md, 2026-07-17.
     function walk(node) {
       if (node.nodeType === 3) {
         var text = node.textContent, changed = false;
@@ -218,6 +226,16 @@ document.addEventListener('DOMContentLoaded', async function() {
             text = text.split(reps[i][0]).join(reps[i][1]);
             changed = true; replaced++;
           }
+        }
+        // A fresh regex literal per call — a shared /g RegExp object across
+        // calls carries lastIndex state between them, which silently skips
+        // matches on later nodes. \d+ matches the whole number instead of
+        // a naive substring match, so it can't repeat the "Day 222" bug at
+        // any day count. See INCIDENT_LOG.md, 2026-07-17.
+        var withDayFixed = text.replace(/\bDay \d+\b/g, 'Day ' + d);
+        if (withDayFixed !== text) {
+          text = withDayFixed;
+          changed = true; replaced++;
         }
         if (changed) node.textContent = text;
       } else {
