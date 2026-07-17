@@ -1,25 +1,37 @@
 {
-  "generated_at": "2026-07-16T13:37:06Z",
+  "generated_at": "2026-07-17T13:52:10Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
-  "today": "2026-07-16",
-  "days_elapsed": 21,
+  "today": "2026-07-17",
+  "days_elapsed": 22,
   "total_days": 92,
-  "pct_complete": 22.8,
-  "expected_trading_days": 14,
-  "days_with_runs": 14,
-  "scheduled_runs": 16,
+  "pct_complete": 23.9,
+  "expected_trading_days": 15,
+  "days_with_runs": 15,
+  "scheduled_runs": 17,
   "data_errors": 0,
   "uptime_pct": 100.0,
   "regime_counts": {
     "UNKNOWN": 6,
-    "BULL_VOLATILE": 11,
+    "BULL_VOLATILE": 12,
     "BULL_TRENDING": 11
   },
   "orders_filled": 3,
-  "orders_rejected": 7,
+  "orders_rejected": 8,
   "orders_pending": 0,
   "open_trades": [
+    {
+      "ticker": "INTC",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-06-25",
+      "entry_price": 130.3625,
+      "exit_date": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "r_multiple": null,
+      "stop_price": 88.95,
+      "target_1": 170.75
+    },
     {
       "ticker": "AAPL",
       "signal_type": "MOMENTUM_ENTRY_IN",
@@ -45,23 +57,10 @@
       "target_1": 344.2320285856313
     }
   ],
-  "closed_trades": [
-    {
-      "ticker": "INTC",
-      "signal_type": "MOMENTUM_ENTRY_IN",
-      "entry_date": "2026-06-25",
-      "entry_price": 130.3625,
-      "exit_date": "2026-07-15",
-      "exit_price": 99.8,
-      "exit_reason": "MAX_HOLD",
-      "r_multiple": -0.7380018110473893,
-      "stop_price": 88.95,
-      "target_1": 170.75
-    }
-  ],
-  "forward_expectancy": -0.738,
-  "forward_winrate": 0.0,
-  "forward_n": 1,
+  "closed_trades": [],
+  "forward_expectancy": null,
+  "forward_winrate": null,
+  "forward_n": 0,
   "backtest_exp": 0.232,
   "backtest_sharpe": 3.05,
   "backtest_winrate": 0.5,
@@ -219,6 +218,13 @@
       "vix_close": 16.170000076293945,
       "spy_rsi": 58.39456409502976,
       "spy_realised_vol_20d": 0.12383118189376706,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-16",
+      "vix_close": 19.459999084472656,
+      "spy_rsi": 54.74274894838294,
+      "spy_realised_vol_20d": 0.11632048105114091,
       "market_regime": "BULL_VOLATILE"
     }
   ]
