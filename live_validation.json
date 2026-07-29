@@ -1,50 +1,25 @@
 {
-  "generated_at": "2026-07-28T20:39:35Z",
+  "generated_at": "2026-07-29T13:40:38Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
-  "today": "2026-07-28",
-  "days_elapsed": 33,
+  "today": "2026-07-29",
+  "days_elapsed": 34,
   "total_days": 92,
-  "pct_complete": 35.9,
+  "pct_complete": 37.0,
   "expected_trading_days": 23,
   "days_with_runs": 21,
-  "scheduled_runs": 27,
+  "scheduled_runs": 28,
   "data_errors": 1,
   "uptime_pct": 91.3,
   "regime_counts": {
     "UNKNOWN": 7,
-    "BULL_VOLATILE": 21,
+    "BULL_VOLATILE": 22,
     "BULL_TRENDING": 11
   },
   "orders_filled": 4,
   "orders_rejected": 8,
   "orders_pending": 2,
-  "open_trades": [
-    {
-      "ticker": "AAPL",
-      "signal_type": "MOMENTUM_ENTRY_IN",
-      "entry_date": "2026-07-07",
-      "entry_price": 313.7,
-      "exit_date": null,
-      "exit_price": null,
-      "exit_reason": null,
-      "r_multiple": null,
-      "stop_price": 295.40418241103237,
-      "target_1": 347.17163517793534
-    },
-    {
-      "ticker": "AAPL",
-      "signal_type": "MOMENTUM_ENTRY_IN",
-      "entry_date": "2026-07-08",
-      "entry_price": 309.425932,
-      "exit_date": null,
-      "exit_price": null,
-      "exit_reason": null,
-      "r_multiple": null,
-      "stop_price": 293.8739857071844,
-      "target_1": 344.2320285856313
-    }
-  ],
+  "open_trades": [],
   "closed_trades": [
     {
       "ticker": "INTC",
@@ -57,11 +32,35 @@
       "r_multiple": -0.8838514941140959,
       "stop_price": 88.95,
       "target_1": 170.75
+    },
+    {
+      "ticker": "AAPL",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-07-07",
+      "entry_price": 313.7,
+      "exit_date": "2026-07-29",
+      "exit_price": 339.9,
+      "exit_reason": "BROKER_CLOSED",
+      "r_multiple": 1.4320212733099498,
+      "stop_price": 295.40418241103237,
+      "target_1": 347.17163517793534
+    },
+    {
+      "ticker": "AAPL",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-07-08",
+      "entry_price": 309.425932,
+      "exit_date": "2026-07-29",
+      "exit_price": 339.9,
+      "exit_reason": "BROKER_CLOSED",
+      "r_multiple": 1.9595018801008723,
+      "stop_price": 293.8739857071844,
+      "target_1": 344.2320285856313
     }
   ],
-  "forward_expectancy": -0.8839,
-  "forward_winrate": 0.0,
-  "forward_n": 1,
+  "forward_expectancy": 0.8359,
+  "forward_winrate": 0.667,
+  "forward_n": 3,
   "backtest_exp": 0.232,
   "backtest_sharpe": 3.05,
   "backtest_winrate": 0.5,
@@ -289,6 +288,13 @@
       "vix_close": 17.75,
       "spy_rsi": 50.79885571690892,
       "spy_realised_vol_20d": 0.10135667937825392,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-07-28",
+      "vix_close": 18.209999084472656,
+      "spy_rsi": 47.36624450588686,
+      "spy_realised_vol_20d": 0.09257313763228088,
       "market_regime": "BULL_VOLATILE"
     },
     {
