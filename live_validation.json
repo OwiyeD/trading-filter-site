@@ -1,37 +1,25 @@
 {
-  "generated_at": "2026-08-31T06:18:14Z",
+  "generated_at": "2026-09-01T13:41:50Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
-  "today": "2026-08-31",
-  "days_elapsed": 67,
+  "today": "2026-09-01",
+  "days_elapsed": 68,
   "total_days": 92,
-  "pct_complete": 72.8,
-  "expected_trading_days": 46,
-  "days_with_runs": 39,
-  "scheduled_runs": 52,
+  "pct_complete": 73.9,
+  "expected_trading_days": 47,
+  "days_with_runs": 40,
+  "scheduled_runs": 53,
   "data_errors": 2,
-  "uptime_pct": 84.8,
+  "uptime_pct": 85.1,
   "regime_counts": {
     "UNKNOWN": 8,
-    "BULL_VOLATILE": 29,
+    "BULL_VOLATILE": 30,
     "BULL_TRENDING": 28
   },
-  "orders_filled": 7,
+  "orders_filled": 9,
   "orders_rejected": 10,
-  "orders_pending": 2,
+  "orders_pending": 0,
   "open_trades": [
-    {
-      "ticker": "NVDA",
-      "signal_type": "MOMENTUM_ENTRY_IN",
-      "entry_date": "2026-08-07",
-      "entry_price": 221.966094,
-      "exit_date": null,
-      "exit_price": null,
-      "exit_reason": null,
-      "r_multiple": null,
-      "stop_price": 203.41291332196863,
-      "target_1": 250.14418983555493
-    },
     {
       "ticker": "AMZN",
       "signal_type": "PULLBACK",
@@ -64,9 +52,9 @@
       "entry_date": "2026-07-07",
       "entry_price": 313.7,
       "exit_date": "2026-07-29",
-      "exit_price": 339.9,
+      "exit_price": 340.93,
       "exit_reason": "BROKER_CLOSED",
-      "r_multiple": 1.4320212733099498,
+      "r_multiple": 1.4883,
       "stop_price": 295.40418241103237,
       "target_1": 347.17163517793534
     },
@@ -76,9 +64,9 @@
       "entry_date": "2026-07-08",
       "entry_price": 309.425932,
       "exit_date": "2026-07-29",
-      "exit_price": 339.9,
+      "exit_price": 340.93,
       "exit_reason": "BROKER_CLOSED",
-      "r_multiple": 1.9595018801008723,
+      "r_multiple": 2.0257,
       "stop_price": 293.8739857071844,
       "target_1": 344.2320285856313
     },
@@ -93,11 +81,23 @@
       "r_multiple": -0.9487,
       "stop_price": 257.77418836506877,
       "target_1": 316.7116635530656
+    },
+    {
+      "ticker": "NVDA",
+      "signal_type": "MOMENTUM_ENTRY_IN",
+      "entry_date": "2026-08-07",
+      "entry_price": 221.966094,
+      "exit_date": "2026-08-31",
+      "exit_price": 219.945469,
+      "exit_reason": "MAX_HOLD",
+      "r_multiple": -0.10890989717965702,
+      "stop_price": 203.41291332196863,
+      "target_1": 250.14418983555493
     }
   ],
-  "forward_expectancy": 0.3897,
-  "forward_winrate": 0.5,
-  "forward_n": 4,
+  "forward_expectancy": 0.3145,
+  "forward_winrate": 0.4,
+  "forward_n": 5,
   "backtest_exp": 0.232,
   "backtest_sharpe": 3.05,
   "backtest_winrate": 0.5,
@@ -514,6 +514,13 @@
       "vix_close": 14.430000305175781,
       "spy_rsi": 56.65761301182673,
       "spy_realised_vol_20d": 0.09299057598442707,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-08-31",
+      "vix_close": 14.920000076293945,
+      "spy_rsi": 54.079336640131814,
+      "spy_realised_vol_20d": 0.06785929969543461,
       "market_regime": "BULL_VOLATILE"
     }
   ]
