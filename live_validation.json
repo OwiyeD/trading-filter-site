@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T06:26:53Z",
+  "generated_at": "2026-09-09T13:43:41Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
   "today": "2026-09-09",
@@ -7,32 +7,19 @@
   "total_days": 92,
   "pct_complete": 82.6,
   "expected_trading_days": 52,
-  "days_with_runs": 43,
-  "scheduled_runs": 56,
+  "days_with_runs": 44,
+  "scheduled_runs": 57,
   "data_errors": 3,
-  "uptime_pct": 82.7,
+  "uptime_pct": 84.6,
   "regime_counts": {
     "UNKNOWN": 8,
-    "BULL_VOLATILE": 34,
+    "BULL_VOLATILE": 35,
     "BULL_TRENDING": 28
   },
-  "orders_filled": 9,
+  "orders_filled": 10,
   "orders_rejected": 10,
   "orders_pending": 0,
-  "open_trades": [
-    {
-      "ticker": "AMZN",
-      "signal_type": "PULLBACK",
-      "entry_date": "2026-08-18",
-      "entry_price": 258.998033,
-      "exit_date": null,
-      "exit_price": null,
-      "exit_reason": null,
-      "r_multiple": null,
-      "stop_price": 246.30004104699714,
-      "target_1": 295.34989959545885
-    }
-  ],
+  "open_trades": [],
   "closed_trades": [
     {
       "ticker": "INTC",
@@ -93,11 +80,23 @@
       "r_multiple": -0.10890989717965702,
       "stop_price": 203.41291332196863,
       "target_1": 250.14418983555493
+    },
+    {
+      "ticker": "AMZN",
+      "signal_type": "PULLBACK",
+      "entry_date": "2026-08-18",
+      "entry_price": 258.998033,
+      "exit_date": "2026-09-08",
+      "exit_price": 252.679508,
+      "exit_reason": "MAX_HOLD",
+      "r_multiple": -0.49760033109060103,
+      "stop_price": 246.30004104699714,
+      "target_1": 295.34989959545885
     }
   ],
-  "forward_expectancy": 0.3145,
-  "forward_winrate": 0.4,
-  "forward_n": 5,
+  "forward_expectancy": 0.1792,
+  "forward_winrate": 0.333,
+  "forward_n": 6,
   "backtest_exp": 0.232,
   "backtest_sharpe": 3.05,
   "backtest_winrate": 0.5,
@@ -549,6 +548,13 @@
       "vix_close": 14.529999732971191,
       "spy_rsi": 55.64008738030407,
       "spy_realised_vol_20d": 0.08105975718512815,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-09-08",
+      "vix_close": 15.720000267028809,
+      "spy_rsi": 51.39333230440438,
+      "spy_realised_vol_20d": 0.08258718714453904,
       "market_regime": "BULL_VOLATILE"
     }
   ]
