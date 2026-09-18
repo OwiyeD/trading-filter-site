@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-09-17T13:36:26Z",
+  "generated_at": "2026-09-18T13:38:10Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
-  "today": "2026-09-17",
-  "days_elapsed": 84,
+  "today": "2026-09-18",
+  "days_elapsed": 85,
   "total_days": 92,
-  "pct_complete": 91.3,
-  "expected_trading_days": 58,
-  "days_with_runs": 49,
-  "scheduled_runs": 62,
+  "pct_complete": 92.4,
+  "expected_trading_days": 59,
+  "days_with_runs": 50,
+  "scheduled_runs": 63,
   "data_errors": 4,
-  "uptime_pct": 84.5,
+  "uptime_pct": 84.7,
   "regime_counts": {
     "UNKNOWN": 8,
-    "BULL_VOLATILE": 40,
+    "BULL_VOLATILE": 41,
     "BULL_TRENDING": 28
   },
   "orders_filled": 10,
@@ -590,6 +590,13 @@
       "vix_close": 17.709999084472656,
       "spy_rsi": 41.78426026649766,
       "spy_realised_vol_20d": 0.08583127961008223,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-09-17",
+      "vix_close": 15.4399995803833,
+      "spy_rsi": 49.99510859431487,
+      "spy_realised_vol_20d": 0.09164968017694397,
       "market_regime": "BULL_VOLATILE"
     }
   ]
