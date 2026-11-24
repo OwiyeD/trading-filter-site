@@ -151,12 +151,12 @@
 
 <div class="header">
   <h1>TradingFilter<span class="badge badge-live">LIVE VALIDATION</span></h1>
-  <div class="subtitle">PT-01 Forward Test &mdash; Day 92 / 92 &mdash; Updated 2026-11-23</div>
+  <div class="subtitle">PT-01 Forward Test &mdash; Day 92 / 92 &mdash; Updated 2026-11-24</div>
 </div>
 
 <div class="terminal">TradingFilter v5 — Live Validation
 ========================================================
-Generated: 2026-11-23T13:36:36Z
+Generated: 2026-11-24T16:42:47Z
 
 PT-01 FORWARD VALIDATION
 --------------------------------------------------------
@@ -167,18 +167,19 @@ PT-01 FORWARD VALIDATION
 AUTOMATION
 --------------------------------------------------------
   Trading days:        65
-  Days with runs:      93
-  Uptime:              143.1%  PASS (target ≥90%)
-  Scheduled runs:      125
+  Days with runs:      56
+  Uptime:              86.2%  BELOW TARGET (target ≥90%)
+  Scheduled runs:      126
   Data errors:         5
 
 FORWARD PERFORMANCE
 --------------------------------------------------------
-  Forward expectancy:   +0.1792R  (n=6)
+  Forward expectancy:   -0.6098R  (n=4)
   Backtest reference:   +0.2320R  (n=190)
-  Divergence:           -0.0528R
-  PT-05 convergence:    PASS (tolerance: +/-0.30R)
-  NOTE: n=6 — insufficient for confidence (need 30+)
+  Divergence:           -0.8418R
+  PT-05 convergence:    FAIL (tolerance: +/-0.30R)
+  Excluded:             2 closed trade(s) with non-strategy exit reasons (e.g. BROKER_CLOSED) — listed below, not counted
+  NOTE: n=4 — insufficient for confidence (need 30+)
 
 OPEN POSITIONS
 --------------------------------------------------------
@@ -195,14 +196,14 @@ CLOSED TRADES
 
 MARKET CONTEXT
 --------------------------------------------------------
-    VIX:                $35.88999938964844
-    SPY RSI:             24.9
-    SPY 20d vol (ann):   25.9%
+    VIX:                $26.6200008392334
+    SPY RSI:             41.5
+    SPY 20d vol (ann):   31.7%
 
 REGIME DISTRIBUTION
 --------------------------------------------------------
     BULL_TRENDING     28 runs
-    BULL_VOLATILE     102 runs
+    BULL_VOLATILE     103 runs
     UNKNOWN           9 runs
 
 PROMOTION PIPELINE

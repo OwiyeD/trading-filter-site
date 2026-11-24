@@ -1,19 +1,20 @@
 {
-  "generated_at": "2026-11-23T13:36:36Z",
+  "generated_at": "2026-11-24T16:42:47Z",
   "pt01_start": "2026-06-25",
   "pt01_end": "2026-09-25",
-  "today": "2026-11-23",
+  "today": "2026-11-24",
   "days_elapsed": 92,
   "total_days": 92,
   "pct_complete": 100.0,
   "expected_trading_days": 65,
-  "days_with_runs": 93,
-  "scheduled_runs": 125,
+  "days_with_runs": 56,
+  "days_with_runs_total": 94,
+  "scheduled_runs": 126,
   "data_errors": 5,
-  "uptime_pct": 143.1,
+  "uptime_pct": 86.2,
   "regime_counts": {
     "UNKNOWN": 9,
-    "BULL_VOLATILE": 102,
+    "BULL_VOLATILE": 103,
     "BULL_TRENDING": 28
   },
   "orders_filled": 10,
@@ -94,9 +95,10 @@
       "target_1": 295.34989959545885
     }
   ],
-  "forward_expectancy": 0.1792,
-  "forward_winrate": 0.333,
-  "forward_n": 6,
+  "forward_expectancy": -0.6098,
+  "forward_winrate": 0.0,
+  "forward_n": 4,
+  "closed_n": 6,
   "backtest_exp": 0.232,
   "backtest_sharpe": 3.05,
   "backtest_winrate": 0.5,
@@ -1031,6 +1033,13 @@
       "vix_close": 35.88999938964844,
       "spy_rsi": 24.927227294708814,
       "spy_realised_vol_20d": 0.2589069075345374,
+      "market_regime": "BULL_VOLATILE"
+    },
+    {
+      "run_date": "2026-11-23",
+      "vix_close": 26.6200008392334,
+      "spy_rsi": 41.522327544071445,
+      "spy_realised_vol_20d": 0.3172928818448422,
       "market_regime": "BULL_VOLATILE"
     }
   ]
